@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     "Free VTU study materials, notes, previous year question papers, and model papers for 2022 and 2021 scheme engineering students.",
-  metadataBase: new URL("https://justnotes.in"),
+  metadataBase: new URL("https://justnotes.tech"),
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -46,18 +46,6 @@ export default function RootLayout({
 
             {/* Right-side links */}
             <div className="flex items-center gap-6 text-sm text-[#525252]">
-              <Link
-                href="/2022"
-                className="hover:text-black transition-colors"
-              >
-                2022 Scheme
-              </Link>
-              <Link
-                href="/2021"
-                className="hover:text-black transition-colors"
-              >
-                2021 Scheme
-              </Link>
               <a
                 href="https://github.com/yourusername/justnotes"
                 target="_blank"

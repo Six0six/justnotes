@@ -1,212 +1,220 @@
 {
-  "schemes": {
-    "2022": {
-      "label": "2022 Scheme",
-      "branches": {
-        "cse": {
-          "label": "Computer Science & Engineering",
-          "semesters": {
-            "3": {
-              "label": "3rd Semester",
-              "subjects": {
-                "bcs301": {
-                  "code": "BCS301",
-                  "name": "Mathematics for Computer Science",
-                  "credits": 4,
-                  "notes": [
-                    {
-                      "title": "Module 1 – Linear Algebra",
-                      "url": "/resources/bcs301/notes/module1.pdf",
-                      "module": 1,
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "Module 2 – Calculus",
-                      "url": "/resources/bcs301/notes/module2.pdf",
-                      "module": 2,
-                      "fileType": "pdf"
-                    }
-                  ],
-                  "pyqs": [],
-                  "modelPapers": [],
-                  "questionBanks": [],
-                  "importantQuestions": []
-                },
-                "bcs302": {
-                  "code": "BCS302",
-                  "name": "Analog and Digital Electronics",
-                  "credits": 4,
-                  "notes": [],
-                  "pyqs": [],
-                  "modelPapers": [],
-                  "questionBanks": [],
-                  "importantQuestions": []
-                },
-                "bcs303": {
-                  "code": "BCS303",
-                  "name": "Digital Design and Computer Organization",
-                  "credits": 4,
-                  "notes": [],
-                  "pyqs": [],
-                  "modelPapers": [],
-                  "questionBanks": [],
-                  "importantQuestions": []
-                },
-                "bcs304": {
-                  "code": "BCS304",
-                  "name": "Data Structures and Applications",
-                  "credits": 4,
-                  "notes": [
-                    {
-                      "title": "Module 1 – Introduction to Data Structures & Arrays",
-                      "description": "Linear and non-linear data structures, complexity analysis, 1D and 2D arrays, sparse matrices.",
-                      "url": "/resources/bcs304/notes/module1.pdf",
-                      "module": 1,
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "Module 2 – Stacks and Queues",
-                      "description": "Stack ADT, infix to postfix conversion, recursion. Queue ADT, circular queue, deque, priority queue.",
-                      "url": "/resources/bcs304/notes/module2.pdf",
-                      "module": 2,
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "Module 3 – Linked Lists",
-                      "description": "Singly, doubly, and circular linked lists. Polynomial addition, stack and queue using linked lists.",
-                      "url": "/resources/bcs304/notes/module3.pdf",
-                      "module": 3,
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "Module 4 – Trees",
-                      "description": "Binary trees, tree traversals (inorder, preorder, postorder), Binary Search Trees, AVL trees, heaps.",
-                      "url": "/resources/bcs304/notes/module4.pdf",
-                      "module": 4,
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "Module 5 – Graphs, Searching & Sorting",
-                      "description": "Graph traversals (BFS, DFS), Dijkstra's algorithm. Bubble, insertion, selection, merge, quick sort.",
-                      "url": "/resources/bcs304/notes/module5.pdf",
-                      "module": 5,
-                      "fileType": "pdf"
-                    }
-                  ],
-                  "pyqs": [
-                    {
-                      "title": "BCS304 – December 2023 Exam Paper",
-                      "url": "/resources/bcs304/pyqs/dec2023.pdf",
-                      "examMonth": "December",
-                      "examYear": 2023,
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "BCS304 – June 2023 Exam Paper",
-                      "url": "/resources/bcs304/pyqs/jun2023.pdf",
-                      "examMonth": "June",
-                      "examYear": 2023,
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "BCS304 – December 2022 Exam Paper (First Batch)",
-                      "url": "/resources/bcs304/pyqs/dec2022.pdf",
-                      "examMonth": "December",
-                      "examYear": 2022,
-                      "fileType": "pdf"
-                    }
-                  ],
-                  "modelPapers": [
-                    {
-                      "title": "VTU Official Model Question Paper – Set 1",
-                      "url": "/resources/bcs304/model-papers/set1.pdf",
-                      "set": 1,
-                      "fileType": "pdf",
-                      "isOfficial": true
-                    },
-                    {
-                      "title": "VTU Official Model Question Paper – Set 2",
-                      "url": "/resources/bcs304/model-papers/set2.pdf",
-                      "set": 2,
-                      "fileType": "pdf",
-                      "isOfficial": true
-                    }
-                  ],
-                  "questionBanks": [
-                    {
-                      "title": "BCS304 Complete Question Bank – All Modules",
-                      "description": "500+ questions covering all 5 modules with answers. Aligned to VTU 2022 syllabus.",
-                      "url": "/resources/bcs304/question-banks/complete-qb.pdf",
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "Module-wise Short Answer Question Bank",
-                      "description": "2-mark and 5-mark questions sorted by module for quick revision.",
-                      "url": "/resources/bcs304/question-banks/short-answers-qb.pdf",
-                      "fileType": "pdf"
-                    }
-                  ],
-                  "importantQuestions": [
-                    {
-                      "title": "May/June 2026 – Most Expected Questions",
-                      "description": "High-probability questions predicted from previous exam trends and official model papers.",
-                      "url": "/resources/bcs304/important/mj2026-expected.pdf",
-                      "targetExam": "May/June 2026",
-                      "fileType": "pdf"
-                    },
-                    {
-                      "title": "Top 10 Questions Per Module – Exam Prep Sheet",
-                      "description": "Curated list of the 10 most frequently asked questions from each module.",
-                      "url": "/resources/bcs304/important/top10-per-module.pdf",
-                      "fileType": "pdf"
-                    }
-                  ]
-                }
-              }
+  "branches": {
+    "cse": {
+      "label": "Computer Science & Engineering",
+      "shortLabel": "CSE",
+      "semesters": {
+        "1": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "2": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "3": {
+          "notes": [
+            {
+              "title": "BCS304 Data Structures — All Modules",
+              "url": "/resources/cse/3/notes/bcs304-all.pdf",
+              "description": "Arrays, stacks, queues, linked lists, trees, graphs and sorting.",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS304 Module 1 — Introduction & Arrays",
+              "url": "/resources/cse/3/notes/bcs304-mod1.pdf",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS304 Module 2 — Stacks & Queues",
+              "url": "/resources/cse/3/notes/bcs304-mod2.pdf",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS304 Module 3 — Linked Lists",
+              "url": "/resources/cse/3/notes/bcs304-mod3.pdf",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS304 Module 4 — Trees",
+              "url": "/resources/cse/3/notes/bcs304-mod4.pdf",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS304 Module 5 — Graphs & Sorting",
+              "url": "/resources/cse/3/notes/bcs304-mod5.pdf",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS303 Computer Organization — All Modules",
+              "url": "/resources/cse/3/notes/bcs303-all.pdf",
+              "description": "CPU design, instruction sets, memory organization.",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS302 Digital Design — All Modules",
+              "url": "/resources/cse/3/notes/bcs302-all.pdf",
+              "description": "Boolean algebra, combinational and sequential circuits.",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS301 Engineering Maths — All Modules",
+              "url": "/resources/cse/3/notes/bcs301-all.pdf",
+              "description": "Fourier series, Laplace and Z-transforms.",
+              "fileType": "pdf"
             }
-          }
+          ],
+          "pyqs": [
+            {
+              "title": "BCS304 Data Structures — December 2023",
+              "url": "/resources/cse/3/pyqs/bcs304-dec2023.pdf",
+              "examMonth": "December",
+              "examYear": 2023,
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS304 Data Structures — June 2023",
+              "url": "/resources/cse/3/pyqs/bcs304-jun2023.pdf",
+              "examMonth": "June",
+              "examYear": 2023,
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS304 Data Structures — December 2022",
+              "url": "/resources/cse/3/pyqs/bcs304-dec2022.pdf",
+              "examMonth": "December",
+              "examYear": 2022,
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS303 Computer Organization — December 2023",
+              "url": "/resources/cse/3/pyqs/bcs303-dec2023.pdf",
+              "examMonth": "December",
+              "examYear": 2023,
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS302 Digital Design — December 2023",
+              "url": "/resources/cse/3/pyqs/bcs302-dec2023.pdf",
+              "examMonth": "December",
+              "examYear": 2023,
+              "fileType": "pdf"
+            },
+            {
+              "title": "3rd Sem All Subjects — PYQ Bundle Dec 2023",
+              "url": "/resources/cse/3/pyqs/bundle-dec2023.pdf",
+              "description": "All 3rd semester subjects bundled in one PDF.",
+              "fileType": "pdf"
+            }
+          ],
+          "questionBanks": [
+            {
+              "title": "BCS304 Data Structures — Full Question Bank",
+              "url": "/resources/cse/3/qb/bcs304-qb.pdf",
+              "description": "500+ questions across all 5 modules with answers.",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS303 Computer Organization — Question Bank",
+              "url": "/resources/cse/3/qb/bcs303-qb.pdf",
+              "fileType": "pdf"
+            },
+            {
+              "title": "BCS302 Digital Design — Question Bank",
+              "url": "/resources/cse/3/qb/bcs302-qb.pdf",
+              "fileType": "pdf"
+            },
+            {
+              "title": "3rd Sem Combined Question Bank — All Subjects",
+              "url": "/resources/cse/3/qb/combined-qb.pdf",
+              "description": "All 3rd sem subjects compiled with 2-mark and 10-mark questions.",
+              "fileType": "pdf"
+            }
+          ]
         },
-        "ece": {
-          "label": "Electronics & Communication Engineering",
-          "semesters": {
-            "3": {
-              "label": "3rd Semester",
-              "subjects": {}
-            }
-          }
-        },
-        "me": {
-          "label": "Mechanical Engineering",
-          "semesters": {
-            "3": {
-              "label": "3rd Semester",
-              "subjects": {}
-            }
-          }
-        },
-        "cv": {
-          "label": "Civil Engineering",
-          "semesters": {
-            "3": {
-              "label": "3rd Semester",
-              "subjects": {}
-            }
-          }
-        }
+        "4": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "5": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "6": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "7": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "8": { "notes": [], "pyqs": [], "questionBanks": [] }
       }
     },
-    "2021": {
-      "label": "2021 Scheme",
-      "branches": {
-        "cse": {
-          "label": "Computer Science & Engineering",
-          "semesters": {
-            "3": {
-              "label": "3rd Semester",
-              "subjects": {}
-            }
-          }
-        }
+    "ece": {
+      "label": "Electronics & Communication Engineering",
+      "shortLabel": "ECE",
+      "semesters": {
+        "1": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "2": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "3": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "4": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "5": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "6": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "7": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "8": { "notes": [], "pyqs": [], "questionBanks": [] }
+      }
+    },
+    "me": {
+      "label": "Mechanical Engineering",
+      "shortLabel": "ME",
+      "semesters": {
+        "1": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "2": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "3": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "4": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "5": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "6": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "7": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "8": { "notes": [], "pyqs": [], "questionBanks": [] }
+      }
+    },
+    "cv": {
+      "label": "Civil Engineering",
+      "shortLabel": "CV",
+      "semesters": {
+        "1": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "2": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "3": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "4": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "5": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "6": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "7": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "8": { "notes": [], "pyqs": [], "questionBanks": [] }
+      }
+    },
+    "ise": {
+      "label": "Information Science & Engineering",
+      "shortLabel": "ISE",
+      "semesters": {
+        "1": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "2": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "3": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "4": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "5": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "6": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "7": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "8": { "notes": [], "pyqs": [], "questionBanks": [] }
+      }
+    },
+    "eee": {
+      "label": "Electrical & Electronics Engineering",
+      "shortLabel": "EEE",
+      "semesters": {
+        "1": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "2": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "3": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "4": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "5": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "6": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "7": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "8": { "notes": [], "pyqs": [], "questionBanks": [] }
+      }
+    },
+    "aiml": {
+      "label": "AI & Machine Learning",
+      "shortLabel": "AIML",
+      "semesters": {
+        "1": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "2": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "3": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "4": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "5": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "6": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "7": { "notes": [], "pyqs": [], "questionBanks": [] },
+        "8": { "notes": [], "pyqs": [], "questionBanks": [] }
       }
     }
   }
