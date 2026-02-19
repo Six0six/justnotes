@@ -5,7 +5,7 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
   variable: "--font-inter",
   display: "swap",
 });
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   description:
     "Free VTU study materials, notes, previous year question papers, and model papers for 2022 and 2021 scheme engineering students.",
   metadataBase: new URL("https://justnotes.tech"),
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",

@@ -4,22 +4,28 @@ import { notFound } from "next/navigation";
 import curriculum from "@/data/curriculum.json";
 
 interface Props {
-  params: { branch: string };
+  params: Promise<{ branch: string }>;
+}
+
+export async function generateStaticParams() {
+  return Object.keys(curriculum.branches).map((branch) => ({ branch }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { branch: branchCode } = await params;
   const branch =
-    curriculum.branches[params.branch as keyof typeof curriculum.branches];
+    curriculum.branches[branchCode as keyof typeof curriculum.branches];
   if (!branch) return { title: "Branch Not Found" };
   return {
-    title: `${branch.label} (${branch.shortLabel}) VTU Notes & PYQs — All Semesters`,
-    description: `Browse all 8 semesters for VTU ${branch.label}. Download free notes, previous year question papers, and question banks.`,
+    title: `${branch.shortLabel} VTU Notes, PYQs & Question Banks — All Semesters`,
+    description: `Download free VTU ${branch.label} notes, previous year question papers (PYQs), and question banks for all 8 semesters.`,
   };
 }
 
-export default function BranchPage({ params }: Props) {
+export default async function BranchPage({ params }: Props) {
+  const { branch: branchCode } = await params;
   const branch =
-    curriculum.branches[params.branch as keyof typeof curriculum.branches];
+    curriculum.branches[branchCode as keyof typeof curriculum.branches];
   if (!branch) notFound();
 
   const semesters = Array.from({ length: 8 }, (_, i) => i + 1);
@@ -45,10 +51,13 @@ export default function BranchPage({ params }: Props) {
           {branch.shortLabel}
         </p>
         <h1 className="text-4xl sm:text-5xl font-semibold tracking-tighter text-black leading-tight mb-4">
-          {branch.label}
+          {branch.shortLabel} VTU Notes,
+          <br />
+          <span className="text-[#525252]">PYQs &amp; Question Banks</span>
         </h1>
         <p className="text-sm text-[#525252]">
-          Select a semester to view notes, PYQs, and question banks.
+          Free VTU {branch.label} notes, previous year question papers (PYQs),
+          and question banks across all 8 semesters.
         </p>
       </section>
 
@@ -64,7 +73,7 @@ export default function BranchPage({ params }: Props) {
           {semesters.map((sem) => (
             <Link
               key={sem}
-              href={`/${params.branch}/${sem}`}
+              href={`/${branchCode}/${sem}`}
               className="group bg-white flex flex-col justify-between p-6 hover:bg-black hover:text-white transition-colors"
             >
               <span className="text-3xl font-semibold tracking-tighter text-inherit leading-none mb-6">

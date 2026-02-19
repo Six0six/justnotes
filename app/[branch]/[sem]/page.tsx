@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import curriculum from "@/data/curriculum.json";
 
 interface Props {
-  params: { branch: string; sem: string };
+  params: Promise<{ branch: string; sem: string }>;
 }
 
 type SemData = {
@@ -20,22 +20,34 @@ function getSemData(branch: string, sem: string): SemData | null {
   return s ?? null;
 }
 
+export async function generateStaticParams() {
+  const params: { branch: string; sem: string }[] = [];
+  for (const branch of Object.keys(curriculum.branches)) {
+    for (let sem = 1; sem <= 8; sem++) {
+      params.push({ branch, sem: String(sem) });
+    }
+  }
+  return params;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { branch: branchCode, sem } = await params;
   const branch =
-    curriculum.branches[params.branch as keyof typeof curriculum.branches];
+    curriculum.branches[branchCode as keyof typeof curriculum.branches];
   if (!branch) return { title: "Not Found" };
   return {
-    title: `VTU ${branch.shortLabel} Semester ${params.sem} — Notes, PYQs & Question Banks`,
-    description: `Download free VTU ${branch.label} Semester ${params.sem} notes, previous year question papers (PYQs), and question banks.`,
+    title: `${branch.shortLabel} Semester ${sem} VTU Notes, PYQs & Question Banks`,
+    description: `Download free VTU ${branch.label} Semester ${sem} notes, previous year question papers (PYQs), and question banks.`,
   };
 }
 
-export default function SemesterPage({ params }: Props) {
+export default async function SemesterPage({ params }: Props) {
+  const { branch: branchCode, sem } = await params;
   const branch =
-    curriculum.branches[params.branch as keyof typeof curriculum.branches];
+    curriculum.branches[branchCode as keyof typeof curriculum.branches];
   if (!branch) notFound();
 
-  const semData = getSemData(params.branch, params.sem);
+  const semData = getSemData(branchCode, sem);
   if (!semData) notFound();
 
   const resources = [
@@ -44,7 +56,7 @@ export default function SemesterPage({ params }: Props) {
       label: "Notes",
       description: "Module-wise PDF notes for all subjects this semester.",
       count: semData.notes.length,
-      href: `/${params.branch}/${params.sem}/notes`,
+      href: `/${branchCode}/${sem}/notes`,
     },
     {
       id: "pyqs",
@@ -52,14 +64,14 @@ export default function SemesterPage({ params }: Props) {
       description:
         "Previous year exam papers (PYQs) from all recent examinations.",
       count: semData.pyqs.length,
-      href: `/${params.branch}/${params.sem}/pyqs`,
+      href: `/${branchCode}/${sem}/pyqs`,
     },
     {
       id: "question-banks",
       label: "Question Bank",
       description: "Compiled 2-mark and 10-mark questions across all subjects.",
       count: semData.questionBanks.length,
-      href: `/${params.branch}/${params.sem}/question-banks`,
+      href: `/${branchCode}/${sem}/question-banks`,
     },
   ];
 
@@ -76,26 +88,26 @@ export default function SemesterPage({ params }: Props) {
           <li aria-hidden="true">/</li>
           <li>
             <Link
-              href={`/${params.branch}`}
+              href={`/${branchCode}`}
               className="hover:text-black transition-colors uppercase"
             >
               {branch.shortLabel}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="text-black font-medium">Semester {params.sem}</li>
+          <li className="text-black font-medium">Semester {sem}</li>
         </ol>
       </nav>
 
       {/* ── Header ──────────────────────────────────────────── */}
       <section className="pt-10 pb-14">
         <p className="text-xs font-medium tracking-widest uppercase text-[#525252] mb-4">
-          {branch.shortLabel} / Semester {params.sem}
+          {branch.shortLabel} / Semester {sem}
         </p>
         <h1 className="text-4xl sm:text-5xl font-semibold tracking-tighter text-black leading-tight">
-          Semester {params.sem}
+          {branch.shortLabel} Semester {sem}
           <br />
-          <span className="text-[#525252]">{branch.label}</span>
+          <span className="text-[#525252]">Notes, PYQs &amp; Question Banks</span>
         </h1>
       </section>
 

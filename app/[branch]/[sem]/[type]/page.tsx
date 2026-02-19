@@ -15,7 +15,7 @@ interface Resource {
 type ResourceType = "notes" | "pyqs" | "question-banks";
 
 interface Props {
-  params: { branch: string; sem: string; type: ResourceType };
+  params: Promise<{ branch: string; sem: string; type: ResourceType }>;
 }
 
 const TYPE_CONFIG: Record<
@@ -60,17 +60,31 @@ function getData(branch: string, sem: string, type: ResourceType) {
   };
 }
 
+export async function generateStaticParams() {
+  const params: { branch: string; sem: string; type: string }[] = [];
+  for (const branch of Object.keys(curriculum.branches)) {
+    for (let sem = 1; sem <= 8; sem++) {
+      for (const type of ["notes", "pyqs", "question-banks"]) {
+        params.push({ branch, sem: String(sem), type });
+      }
+    }
+  }
+  return params;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const data = getData(params.branch, params.sem, params.type);
+  const { branch, sem, type } = await params;
+  const data = getData(branch, sem, type);
   if (!data) return { title: "Not Found" };
   return {
-    title: `VTU ${data.shortLabel} Sem ${params.sem} ${data.config.label} — Free PDF Download`,
-    description: `${data.config.description} VTU ${data.branchLabel}, Semester ${params.sem}.`,
+    title: `${data.shortLabel} Semester ${sem} ${data.config.label} — Free VTU PDF Download`,
+    description: `Free VTU ${data.branchLabel} Semester ${sem} ${data.config.label.toLowerCase()}. ${data.config.description}`,
   };
 }
 
-export default function ResourceTypePage({ params }: Props) {
-  const data = getData(params.branch, params.sem, params.type);
+export default async function ResourceTypePage({ params }: Props) {
+  const { branch: branchCode, sem, type } = await params;
+  const data = getData(branchCode, sem, type);
   if (!data) notFound();
 
   const { items, config, branchLabel, shortLabel } = data;
@@ -88,7 +102,7 @@ export default function ResourceTypePage({ params }: Props) {
           <li aria-hidden="true">/</li>
           <li>
             <Link
-              href={`/${params.branch}`}
+              href={`/${branchCode}`}
               className="hover:text-black transition-colors uppercase"
             >
               {shortLabel}
@@ -97,10 +111,10 @@ export default function ResourceTypePage({ params }: Props) {
           <li aria-hidden="true">/</li>
           <li>
             <Link
-              href={`/${params.branch}/${params.sem}`}
+              href={`/${branchCode}/${sem}`}
               className="hover:text-black transition-colors"
             >
-              Semester {params.sem}
+              Semester {sem}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -111,13 +125,16 @@ export default function ResourceTypePage({ params }: Props) {
       {/* ── Header ──────────────────────────────────────────── */}
       <section className="pt-10 pb-14">
         <p className="text-xs font-medium tracking-widest uppercase text-[#525252] mb-4">
-          {shortLabel} / Sem {params.sem}
+          {shortLabel} / Sem {sem}
         </p>
         <h1 className="text-4xl sm:text-5xl font-semibold tracking-tighter text-black leading-tight mb-4">
-          {config.label}
+          {shortLabel} Semester {sem}
+          <br />
+          <span className="text-[#525252]">{config.label}</span>
         </h1>
         <p className="text-sm text-[#525252] max-w-md leading-relaxed">
-          {config.description}
+          Free VTU {branchLabel} Semester {sem}{" "}
+          {config.label.toLowerCase()}. {config.description}
         </p>
       </section>
 
@@ -126,7 +143,7 @@ export default function ResourceTypePage({ params }: Props) {
       {/* ── Resource List ────────────────────────────────────── */}
       <section className="pb-24">
         <h2 className="text-xs font-medium tracking-widest uppercase text-[#525252] mb-0">
-          {branchLabel} — Semester {params.sem}
+          {branchLabel} — Semester {sem}
           {items.length > 0 && (
             <span className="ml-3 font-normal normal-case tracking-normal text-[#525252]">
               {items.length} file{items.length !== 1 ? "s" : ""}

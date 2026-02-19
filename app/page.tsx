@@ -3,9 +3,9 @@ import Link from "next/link";
 import curriculum from "@/data/curriculum.json";
 
 export const metadata: Metadata = {
-  title: "JustNotes – Free VTU Notes, PYQs & Study Materials",
+  title: "Free VTU Notes, PYQs & Study Materials — All Branches",
   description:
-    "Free VTU study materials for all branches. Access module-wise notes, previous year question papers, and question banks. No login required.",
+    "Free VTU notes, previous year question papers (PYQs), and question banks for all branches and all semesters. No login required.",
 };
 
 const branches = Object.entries(curriculum.branches).map(([code, branch]) => ({
@@ -24,13 +24,14 @@ export default function HomePage() {
           VTU Engineering / Study Materials
         </p>
         <h1 className="text-5xl sm:text-6xl font-semibold tracking-tighter text-black leading-[1.08] mb-8">
-          Student
+          Free VTU Notes,
           <br />
-          Repository.
+          PYQs &amp; Study Materials.
         </h1>
         <p className="text-base text-[#525252] max-w-[480px] leading-relaxed">
-          Free, no-login access to VTU notes, previous year question papers, and
-          question banks. Select your branch to get started.
+          Free, no-login access to VTU notes, previous year question papers
+          (PYQs), and question banks for all branches. Select your branch to get
+          started.
         </p>
       </section>
 
